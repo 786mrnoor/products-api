@@ -66,6 +66,17 @@ npm run dev
 ```bash
 cd frontend
 npm install
+```
+
+Create a `.env` file:
+
+```
+VITE_BACKEND_URI=backend_uri
+```
+
+Run server:
+
+```bash
 npm run dev
 ```
 

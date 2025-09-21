@@ -4,7 +4,10 @@ import { verifyRefreshToken } from "../../utils/session.js";
 export default async function logout(req, res) {
   try {
     const token = req.cookies.refreshToken;
-    if (!token) return res.sendStatus(204);
+    if (!token) {
+      res.clearCookie("refreshToken");
+      return res.status(200).json({ message: "Logout successful" });
+    }
     let payload = verifyRefreshToken(token);
 
     await UserModel.updateOne(
