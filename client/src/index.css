@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #646cff;
+  --bg: #242424;
+  --bg-secondary: #1a1a1a;
+  --border-color: #ccc;
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.top-nav {
+  background-color: var(--bg-secondary);
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  a,
+  button {
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.6rem 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 0.4rem;
+  }
+}
+
+.home-page {
+  padding: 1rem;
+
+  ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style-type: none;
+    li {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+
+      &.featured {
+        background-color: green;
+      }
+      p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      a:not(.edit-button),
+      button:not(.edit-button) {
+        padding: 0.2rem 0.5rem;
+        background-color: red;
+        margin-left: 0.3rem;
+      }
+      a.edit-button {
+        margin-left: auto;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+  }
+  .filter-form {
+    margin-top: 0.5rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background-color: #767cffbb;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .input-wrapper {
+      flex: 1 0 200px;
+      /* display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center; */
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.product-form {
+  border: 1px solid var(--border-color);
+  max-width: 500px;
+  padding: 0.5rem;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+    &:focus {
+      box-shadow: 0 0 0 3px var(--primary-color);
+    }
+  }
+  label {
+    width: 100%;
+    display: flex;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.login-form,
+.signup-form {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: var(--bg-secondary);
+  padding: 1.2rem;
+
+  h1 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      border-radius: 0.2rem;
+      &:focus {
+        box-shadow: 0 0 0 3px var(--primary-color);
+      }
+    }
+    button {
+      width: 100%;
+    }
+  }
+  p {
+    margin-top: 1rem;
+    text-align: center;
+
+    a {
+      margin-left: 0.5rem;
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+  }
+}
+
+a,
+button {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--border-color);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (width > 600px) {
+  .product-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width > 850px) {
+  .product-form {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
